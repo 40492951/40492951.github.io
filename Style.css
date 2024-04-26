@@ -1,0 +1,308 @@
+/* Creates a root name for colours used */
+:root{
+--black: #000;
+--white: #fff;
+--grey: #928c8ced;
+}
+
+/* Gives a standard measurement accross all for fonts and boxes */
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Bradley Hand ITC', sans-serif; 
+}
+
+/* Styles the navbar at the top of the screen */
+.navbar{
+    background: var(--black);
+    height: 60px;
+    width: 100%;
+    padding: 0.5rem calc((11vw - 1200px) / 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+/* Styles the logo on the top left of the navbar */
+.navbar__gif{
+    background: url("./images/navbar_home.gif");
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    height: 50px;
+}
+
+/* Styles the navbar logo when being hovered over */
+.navbar__logo:hover{
+    background: url("./images/navbar_home.gif");
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    height: 50px;
+}
+
+/* Styles the "Settings" on the menu selection */
+.navbar__link{
+    color: var(--white);
+    text-decoration: none;
+    padding: 0rem 1rem;
+}
+
+/* Styles the "Settings" when being hovered over */
+.navbar__link:hover{
+    color: var(--grey);
+}
+
+/* Styles the 3 bars on the top right of the navbar */
+@media screen {
+    body.active{
+    overflow: hidden;
+    }
+    .navbar__link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar__menu{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 100px);
+        position: absolute;
+        width: 100%;
+        top: -1000px;
+    }
+
+    /* .active changes the layout and items when clicked */
+    .navbar__menu.active{
+        top:100%;
+        opacity: 1;
+        z-index: 99;
+        height: 6rem;
+        font-size: 1.5rem;
+        background: var(--black);
+    }
+
+    .navbar__toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: var(--white);
+        display: block;
+        cursor: pointer;
+    }
+    /* Uses javascript to change the 3 bars */
+    #mobile-menu{
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+    /* When clicked the 3 bars animate into a cross with the middle line fading out */
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/*Hero Section*/
+/* Formats the hero section to have a static background image */
+.hero, .bottom__container{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
+    url("./images/Home_Background.jpg");
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0rem calc((11vw - 1200px) / 2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+/* Styles the text and positions as well as the button */
+.hero__content{
+    color:var(--white);
+    padding: 1rem 1rem;
+    line-height: 1;
+    text-shadow: 2px 2px 4px var(--black);
+}
+
+.hero__content h1{
+    font-size: clamp(3rem, 8vw, 7rem);
+}
+
+.hero__content p{
+    font-size:  clamp(1rem, 4vw, 2.5rem);
+    margin-bottom: 3rem;
+}
+
+.hero__button{
+    position: relative; top: 20px;
+    padding: 1rem 2rem;
+    border: none;
+    background: var(--grey);
+    color: var(--white);
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s ease;
+    border-radius: 120px;
+}
+/* Styles the button when hovered over */
+.hero__button:hover{
+    background: var(--black);
+}
+/* Styles the hidden bottom section of the page */
+.bottom{
+    padding: 3% calc((100vw - 1200px) / 2);
+}
+
+.bottom__container{
+    background-color: transparent;
+
+}
+.topline{
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 9rem;
+    text-shadow: 2px 2px 4px var(--white);
+    font-weight: bold;
+}
+
+.bottom__heading{
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 6vw, 2rem);
+    text-shadow: 2px 2px 4px var(--white);
+    font-weight: bold;
+}
+
+.bottom__features{
+    list-style: none;
+    text-shadow: 2px 2px 4px var(--white);
+    font-weight: bold;
+}
+
+.bottom__feature{
+    font-size: clamp(1rem, 5vw, 1.2rem);
+    text-shadow: 0 0 20px white;
+    font-weight: bold;
+}
+
+/* Main Section */
+/* Styles the background of the main page with a gif bordering the content */
+.mainScreen{
+    display: flex;
+    background-image: url("./images/Main_Border.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 85%;
+    background-color: #000;
+    background-position: center;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+/* Styles the buttons */
+.bass__button{
+   background-color: white;
+   position:relative; top: 20px;
+   color: black;
+   border: none;
+   font-size: 2rem;
+   text-decoration: none;
+   font-weight: bold;
+   cursor: pointer;
+   outline: none;
+   transition: 0.3s ease;
+   border-radius: 10px;
+   height:100px;
+   width: 115px;
+   align-self: center;
+   text-align: center;
+   }
+
+/* Styles the buttons when hovered over with an animated bordered gif */
+.bass__button:hover{
+    background-image: url("./images/Button_Select.gif");
+    background-color: black;
+    color: white;
+}
+
+ .guitar__button{
+   background-color: white;
+   position:relative; top: 20px;
+   color: black;
+   border: none;
+   font-size: 2rem;
+   text-decoration: none;
+   font-weight: bold;
+   cursor: pointer;
+   outline: none;
+   transition: 0.3s ease;
+   border-radius: 10px;
+   height:100px;
+   width: 115px;
+   align-self: center;
+   text-align: center;
+ }
+
+ .guitar__button:hover{
+    background-image: url("./images/Button_Select.gif");
+    background-color: black;
+    color: white;
+}
+
+ .drum__button{
+    background-color: white;
+    position:relative; top: 20px;
+    color: black;
+    border: none;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s ease;
+    border-radius: 10px;
+    height:100px;
+    width: 115px;
+    align-self: center;
+    text-align: center;
+ }
+
+ .drum__button:hover{
+    background-image: url("./images/Button_Select.gif");
+    background-color: black;
+    color: white;
+}
+
+.clockTimerDisplay{
+    background-color: white;
+    position:relative; top: 20px;
+    color: black;
+    border: none;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s ease;
+    border-radius: 10px;
+    height:100px;
+    width: 115px;
+    align-self: center;
+    text-align: center;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Noize</title>
+    <!-- Connects the html to the css files -->
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <!-- The navbar remains the same accross all pages -->
+    <nav class="navbar">
+        <a href="/index.html" class="navbar__logo"><img src="./images/navbar_home.gif" alt="" class="navbar__gif"></a>
+        <div>
+        </div>
+        <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="navbar__menu">
+            <a href="/index.html" class="navbar__link">Settings</a>
+
+        </div>
+    </nav>
+    <!-- Main Section -->
+    <div class="mainScreen">
+        <!-- Inputs the audio files from the Audio folder -->
+        <audio id="bassAudio", src="./Audio/Bass.wav"></audio>
+        <audio id="guitarAudio", src="./Audio/Guitar.wav"></audio>
+        <audio id="drumAudio", src="./Audio/Drums.wav"></audio>
+        <!-- Creates the buttons, "onclick" runs a javascript function when button is clicked -->
+        <button id="bassBtn", class="bass__button", onclick="playBass()">Bass</button>
+        <button id="guitarBtn", class="guitar__button", onclick="playGuitar()">Guitar</button>
+        <button id="drumBtn", class="drum__button", onclick="playDrums()">Drums</button>
+    </div>      
+    <!-- Connects the html to the javascript files -->
+    <script src="ScrollTrigger.min.js"></script>
+    <script src="gsap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
